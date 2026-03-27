@@ -5,90 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Riverwinds Travel</title>
 
+<!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 body{font-family:'Poppins',sans-serif;scroll-behavior:smooth;}
-.navbar{backdrop-filter:blur(10px);}
-.btn-gradient{background:linear-gradient(45deg,#4facfe,#6a11cb);color:#fff;border:none;}
-.btn-gradient:hover{opacity:.9;}
-.section{padding:80px 0;}
-.bg-alt{background:#f8f9fa;}
-.card{border:none;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,0.08);transition:.3s;}
-.card:hover{transform:translateY(-6px);}
+.navbar{background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.05);}
 .hero{min-height:90vh;background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;position:relative;color:#fff;}
-.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.6);}
-.hero .container{position:relative;z-index:2;}
-.glass{background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border-radius:16px;padding:25px;}
-.counter{font-size:30px;font-weight:600;}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,0.6);}
+.hero-content{position:relative;z-index:2;}
+.btn-gradient{background:linear-gradient(45deg,#0d6efd,#6f42c1);color:#fff;border:none;}
+.btn-gradient:hover{opacity:0.9;}
+.glass{background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);border-radius:15px;padding:20px;}
+.card{border:none;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.05);transition:.3s;}
+.card:hover{transform:translateY(-5px);}
+.section{padding:80px 0;}
+.bg-light-alt{background:#f8f9fa;}
+.icon-box{padding:20px;text-align:center;border-radius:15px;background:#fff;box-shadow:0 5px 20px rgba(0,0,0,0.05);}
 footer{background:#111;color:#ccc;}
 footer a{color:#ccc;text-decoration:none;}
 footer a:hover{color:#fff;}
-#topBtn{position:fixed;bottom:20px;right:20px;display:none;}
-.whatsapp{position:fixed;bottom:80px;right:20px;background:#25D366;color:#fff;padding:14px;border-radius:50%;}
+#backToTop{position:fixed;bottom:80px;right:20px;display:none;}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:12px 15px;border-radius:50%;}
 </style>
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
 <div class="container">
-<a class="navbar-brand fw-bold" href="#">Riverwinds</a>
+<a class="navbar-brand fw-bold">Riverwinds</a>
 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-<li class="nav-item"><a class="nav-link" href="#india">India</a></li>
-<li class="nav-item"><a class="nav-link" href="#international">International</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+<li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+<li class="nav-item"><a href="#india" class="nav-link">India</a></li>
+<li class="nav-item"><a href="#international" class="nav-link">International</a></li>
+<li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
 </ul>
 </div>
 </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero d-flex align-items-center">
-<div class="container">
+<div class="overlay"></div>
+<div class="container hero-content">
 <div class="row align-items-center">
 <div class="col-lg-7">
-<h1 class="display-4 fw-bold">Discover Your Next Dream Destination</h1>
-<p>
-<i class="bi bi-currency-rupee"></i> Best Price &nbsp;
-<i class="bi bi-shield-check"></i> Trusted Guides &nbsp;
-<i class="bi bi-headset"></i> 24/7 Support
-</p>
-<h5 id="typing"></h5>
+<h1 class="fw-bold display-5">Discover Your Next Dream Destination</h1>
+<p>Trusted by thousands • Best prices • Seamless travel planning</p>
+
+<p id="typing" class="fw-semibold"></p>
+
+<div class="d-flex gap-3 mt-3">
+<a href="#india" class="btn btn-gradient">Explore Packages</a>
+<a href="tel:+9199999999999" class="btn btn-outline-light">Call Now</a>
+</div>
+
 <div class="mt-4">
-<a href="#india" class="btn btn-gradient me-2">Explore Packages</a>
-<a href="tel:+919999999999" class="btn btn-outline-light">Call Now</a>
+<span><i class="bi bi-check-circle"></i> Best Price</span>
+<span class="ms-3"><i class="bi bi-check-circle"></i> Trusted Guides</span>
+<span class="ms-3"><i class="bi bi-check-circle"></i> 24/7 Support</span>
 </div>
 </div>
 
 <div class="col-lg-5 mt-4 mt-lg-0">
-<div class="glass">
-<h5 class="mb-3">Get a Free Itinerary</h5>
+<div class="glass text-white">
+<h5>Get a Free Itinerary</h5>
 <form id="leadForm">
-<input class="form-control mb-2" placeholder="Full Name" required>
-<input class="form-control mb-2" placeholder="Phone" required>
-<input class="form-control mb-2" type="email" placeholder="Email" required>
-<select class="form-control mb-2" required>
-<option value="">Destination Interested In</option>
-<option>India</option>
-<option>International</option>
-<option>Both</option>
+<input required class="form-control my-2" placeholder="Full Name">
+<input required class="form-control my-2" placeholder="Phone">
+<input type="email" required class="form-control my-2" placeholder="Email">
+<select class="form-select my-2">
+<option>Destination Interest</option>
+<option>India</option><option>International</option><option>Both</option>
 </select>
-<input class="form-control mb-2" placeholder="Travel Month">
-<input class="form-control mb-2" placeholder="Budget Range">
-<textarea class="form-control mb-2" placeholder="Message"></textarea>
-<div class="form-check mb-2">
-<input class="form-check-input" type="checkbox" required>
-<label>I agree to be contacted</label>
+<input class="form-control my-2" placeholder="Travel Month">
+<input class="form-control my-2" placeholder="Budget">
+<textarea class="form-control my-2" placeholder="Message"></textarea>
+<div class="form-check">
+<input type="checkbox" required class="form-check-input">
+<label class="form-check-label">I agree to be contacted</label>
 </div>
-<button class="btn btn-gradient w-100">Request Callback</button>
-<small>We respond within 30 minutes (business hours)</small>
+<button class="btn btn-gradient w-100 mt-2">Request Callback</button>
+<small>We respond within 30 minutes</small>
 </form>
 </div>
 </div>
@@ -96,292 +104,226 @@ footer a:hover{color:#fff;}
 </div>
 </section>
 
+<!-- About -->
 <section id="about" class="section">
 <div class="container">
 <div class="row align-items-center">
 <div class="col-lg-6">
-<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="img-fluid rounded mb-3" loading="lazy">
+<img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470" class="img-fluid rounded">
 </div>
 <div class="col-lg-6">
 <h2>About Riverwinds</h2>
-<p>We craft personalized travel experiences across India and the world.</p>
+<p>We craft unforgettable travel experiences across India and beyond.</p>
 <div class="row text-center">
-<div class="col-6"><div class="counter" data-count="5000">0</div>Trips Planned</div>
-<div class="col-6"><div class="counter" data-count="8000">0</div>Happy Travelers</div>
-<div class="col-6"><div class="counter" data-count="50">0</div>Destinations</div>
-<div class="col-6"><div class="counter" data-count="10">0</div>Years Experience</div>
+<div class="col-6"><h3 class="counter" data-count="5000">0</h3><p>Trips</p></div>
+<div class="col-6"><h3 class="counter" data-count="3000">0</h3><p>Travelers</p></div>
+<div class="col-6"><h3 class="counter" data-count="50">0</h3><p>Destinations</p></div>
+<div class="col-6"><h3 class="counter" data-count="10">0</h3><p>Years</p></div>
 </div>
 </div>
 </div>
 </div>
 </section>
 
-<section id="india" class="section bg-alt">
+<!-- India Packages -->
+<section id="india" class="section bg-light-alt">
 <div class="container">
 <h2 class="text-center mb-5">India Packages</h2>
 <div class="row g-4">
 
+<script>
+const indiaPackages=[
+["Goa","https://images.unsplash.com/photo-1507525428034-b723cf961d3e"],
+["Kerala","https://images.unsplash.com/photo-1602216056096-3b40cc0c9944"],
+["Kashmir","https://images.unsplash.com/photo-1598091383021-15ddea10925d"],
+["Rajasthan","https://images.unsplash.com/photo-1599661046289-e31897846e41"],
+["Himachal","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"],
+["Andaman","https://images.unsplash.com/photo-1507525428034-b723cf961d3e"]
+];
+document.write(indiaPackages.map(p=>`
 <div class="col-lg-4">
 <div class="card">
-<img src="https://images.unsplash.com/photo-1586500036706-41963de24d8e" class="card-img-top" loading="lazy">
+<img src="${p[1]}" class="card-img-top" loading="lazy">
 <div class="card-body">
-<h5>Goa</h5><p>5 Days</p>
-<ul><li>Beach stay</li><li>Water sports</li><li>Nightlife</li></ul>
-<a class="btn btn-gradient">View Details</a>
+<h5>${p[0]}</h5>
+<p>5 Nights / 6 Days</p>
+<ul><li>Hotels</li><li>Sightseeing</li><li>Transfers</li></ul>
+<button class="btn btn-gradient w-100">View Details</button>
 </div>
 </div>
-</div>
-
-<div class="col-lg-4">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944" class="card-img-top" loading="lazy">
-<div class="card-body">
-<h5>Kerala</h5><p>5 Days</p>
-<ul><li>Backwaters</li><li>Houseboat</li><li>Nature</li></ul>
-<a class="btn btn-gradient">View Details</a>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1605540436563-5bca919ae766" class="card-img-top" loading="lazy">
-<div class="card-body">
-<h5>Kashmir</h5><p>6 Days</p>
-<ul><li>Snow views</li><li>Shikara ride</li><li>Mountains</li></ul>
-<a class="btn btn-gradient">View Details</a>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09b" class="card-img-top" loading="lazy">
-<div class="card-body">
-<h5>Rajasthan</h5><p>6 Days</p>
-<ul><li>Palaces</li><li>Desert safari</li><li>Culture</li></ul>
-<a class="btn btn-gradient">View Details</a>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1598899134739-24c46f58c5c0" class="card-img-top" loading="lazy">
-<div class="card-body">
-<h5>Himachal</h5><p>5 Days</p>
-<ul><li>Hill stations</li><li>Snow</li><li>Adventure</li></ul>
-<a class="btn btn-gradient">View Details</a>
-</div>
-</div>
-</div>
-
-<div class="col-lg-4">
-<div class="card">
-<img src="https://images.unsplash.com/photo-1589308078054-832db35e5c59" class="card-img-top" loading="lazy">
-<div class="card-body">
-<h5>Andaman</h5><p>5 Days</p>
-<ul><li>Islands</li><li>Scuba diving</li><li>Beaches</li></ul>
-<a class="btn btn-gradient">View Details</a>
-</div>
-</div>
-</div>
+</div>`).join(""));
+</script>
 
 </div>
 </div>
 </section>
 
+<!-- International -->
 <section id="international" class="section">
 <div class="container">
 <h2 class="text-center mb-5">International Packages</h2>
 <div class="row g-4">
 
-<div class="col-lg-4"><div class="card">
-<img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade" class="card-img-top" loading="lazy">
-<div class="card-body"><h5>Dubai</h5><p>5 Days</p><ul><li>Luxury</li><li>Desert</li><li>Shopping</li></ul><a class="btn btn-gradient">View Details</a></div></div></div>
-
-<div class="col-lg-4"><div class="card">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="card-img-top" loading="lazy">
-<div class="card-body"><h5>Bali</h5><p>6 Days</p><ul><li>Beaches</li><li>Resorts</li><li>Culture</li></ul><a class="btn btn-gradient">View Details</a></div></div></div>
-
-<div class="col-lg-4"><div class="card">
-<img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" class="card-img-top" loading="lazy">
-<div class="card-body"><h5>Thailand</h5><p>5 Days</p><ul><li>Islands</li><li>Nightlife</li><li>Food</li></ul><a class="btn btn-gradient">View Details</a></div></div></div>
-
-<div class="col-lg-4"><div class="card">
-<img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" class="card-img-top" loading="lazy">
-<div class="card-body"><h5>Singapore</h5><p>4 Days</p><ul><li>City tours</li><li>Theme parks</li><li>Shopping</li></ul><a class="btn btn-gradient">View Details</a></div></div></div>
-
-<div class="col-lg-4"><div class="card">
-<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" class="card-img-top" loading="lazy">
-<div class="card-body"><h5>Maldives</h5><p>4 Days</p><ul><li>Luxury villas</li><li>Beaches</li><li>Relaxation</li></ul><a class="btn btn-gradient">View Details</a></div></div></div>
-
-<div class="col-lg-4"><div class="card">
-<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" class="card-img-top" loading="lazy">
-<div class="card-body"><h5>Europe</h5><p>8 Days</p><ul><li>Multiple cities</li><li>Culture</li><li>Landmarks</li></ul><a class="btn btn-gradient">View Details</a></div></div></div>
+<script>
+const intl=[
+["Dubai","https://images.unsplash.com/photo-1512453979798-5ea266f8880c"],
+["Bali","https://images.unsplash.com/photo-1507525428034-b723cf961d3e"],
+["Thailand","https://images.unsplash.com/photo-1528181304800-259b08848526"],
+["Singapore","https://images.unsplash.com/photo-1496939376851-89342e90adcd"],
+["Maldives","https://images.unsplash.com/photo-1507525428034-b723cf961d3e"],
+["Europe","https://images.unsplash.com/photo-1467269204594-9661b134dd2b"]
+];
+document.write(intl.map(p=>`
+<div class="col-lg-4">
+<div class="card">
+<img src="${p[1]}" class="card-img-top" loading="lazy">
+<div class="card-body">
+<h5>${p[0]}</h5>
+<p>6 Nights / 7 Days</p>
+<ul><li>Flights</li><li>Hotels</li><li>Visa Help</li></ul>
+<button class="btn btn-gradient w-100">View Details</button>
+</div>
+</div>
+</div>`).join(""));
+</script>
 
 </div>
 </div>
 </section>
 
-<section class="section bg-alt text-center">
-<div class="container">
-<h2>Why Choose Us</h2>
-<div class="row g-4 mt-4">
-<div class="col-md-4"><i class="bi bi-map fs-1"></i><p>Customized itineraries</p></div>
-<div class="col-md-4"><i class="bi bi-shield-check fs-1"></i><p>Verified stays</p></div>
-<div class="col-md-4"><i class="bi bi-currency-rupee fs-1"></i><p>Best price</p></div>
-<div class="col-md-4"><i class="bi bi-headset fs-1"></i><p>Support</p></div>
-<div class="col-md-4"><i class="bi bi-credit-card fs-1"></i><p>Easy EMI</p></div>
-<div class="col-md-4"><i class="bi bi-people fs-1"></i><p>Trusted</p></div>
+<!-- Why -->
+<section class="section bg-light-alt">
+<div class="container text-center">
+<h2 class="mb-5">Why Choose Us</h2>
+<div class="row g-4">
+<div class="col-md-4"><div class="icon-box"><i class="bi bi-map fs-2"></i><p>Customized Trips</p></div></div>
+<div class="col-md-4"><div class="icon-box"><i class="bi bi-shield-check fs-2"></i><p>Verified Stays</p></div></div>
+<div class="col-md-4"><div class="icon-box"><i class="bi bi-cash fs-2"></i><p>Best Prices</p></div></div>
+<div class="col-md-4"><div class="icon-box"><i class="bi bi-headset fs-2"></i><p>24/7 Support</p></div></div>
+<div class="col-md-4"><div class="icon-box"><i class="bi bi-credit-card fs-2"></i><p>Easy EMI</p></div></div>
+<div class="col-md-4"><div class="icon-box"><i class="bi bi-people fs-2"></i><p>Trusted</p></div></div>
 </div>
 </div>
 </section>
 
+<!-- FAQ -->
 <section class="section">
 <div class="container">
-<h2 class="text-center mb-4">FAQ</h2>
+<h2 class="text-center mb-4">FAQs</h2>
 <div class="accordion" id="faq">
-
-<div class="accordion-item">
-<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">How to book?</button>
-<div id="f1" class="accordion-collapse collapse show"><div class="accordion-body">Book easily online.</div></div>
-</div>
-
-<div class="accordion-item">
-<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Cancellation policy?</button>
-<div id="f2" class="accordion-collapse collapse"><div class="accordion-body">Flexible cancellation.</div></div>
-</div>
-
-<div class="accordion-item">
-<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f3">Payment methods?</button>
-<div id="f3" class="accordion-collapse collapse"><div class="accordion-body">Cards, UPI, EMI.</div></div>
-</div>
-
-<div class="accordion-item">
-<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f4">Visa help?</button>
-<div id="f4" class="accordion-collapse collapse"><div class="accordion-body">We assist with visas.</div></div>
-</div>
-
-<div class="accordion-item">
-<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f5">Custom trips?</button>
-<div id="f5" class="accordion-collapse collapse"><div class="accordion-body">Fully customizable.</div></div>
-</div>
-
-<div class="accordion-item">
-<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f6">Group trips?</button>
-<div id="f6" class="accordion-collapse collapse"><div class="accordion-body">Special group discounts.</div></div>
-</div>
-
+<div class="accordion-item"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#f1">Booking?</button><div id="f1" class="accordion-collapse collapse show"><div class="accordion-body">Easy booking process.</div></div></div>
+<div class="accordion-item"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Cancellation?</button><div id="f2" class="accordion-collapse collapse"><div class="accordion-body">Flexible policy.</div></div></div>
 </div>
 </div>
 </section>
 
-<section class="section bg-alt">
+<!-- Testimonials -->
+<section class="section bg-light-alt">
 <div class="container">
-<h2 class="text-center mb-4">Testimonials</h2>
+<h2 class="text-center mb-5">Testimonials</h2>
+
 <div id="carousel" class="carousel slide" data-bs-ride="carousel">
 <div class="carousel-inner">
 
 <div class="carousel-item active">
 <div class="row">
-<div class="col-md-6"><div class="card p-3">⭐⭐⭐⭐⭐ Amazing trip!</div></div>
-<div class="col-md-6"><div class="card p-3">⭐⭐⭐⭐⭐ Loved it!</div></div>
+<div class="col-md-6">
+<div class="card p-3">Amazing trip! ⭐⭐⭐⭐⭐</div>
 </div>
+<div class="col-md-6">
+<div class="card p-3">Loved the experience! ⭐⭐⭐⭐⭐</div>
 </div>
-
-<div class="carousel-item">
-<div class="row">
-<div class="col-md-6"><div class="card p-3">⭐⭐⭐⭐⭐ Great service!</div></div>
-<div class="col-md-6"><div class="card p-3">⭐⭐⭐⭐⭐ Best experience!</div></div>
 </div>
 </div>
 
 <div class="carousel-item">
 <div class="row">
-<div class="col-md-6"><div class="card p-3">⭐⭐⭐⭐⭐ Highly recommend!</div></div>
-<div class="col-md-6"><div class="card p-3">⭐⭐⭐⭐⭐ Fantastic!</div></div>
+<div class="col-md-6"><div class="card p-3">Best service ⭐⭐⭐⭐⭐</div></div>
+<div class="col-md-6"><div class="card p-3">Highly recommend ⭐⭐⭐⭐⭐</div></div>
 </div>
 </div>
 
 </div>
 </div>
+
 </div>
 </section>
 
+<!-- Contact -->
 <section id="contact" class="section">
 <div class="container">
 <div class="row">
 <div class="col-lg-6">
-<iframe src="https://maps.google.com/maps?q=Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300"></iframe>
+<iframe class="w-100" height="300" src="https://maps.google.com/maps?q=Delhi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 </div>
 <div class="col-lg-6">
 <h4>Contact Us</h4>
 <p>Phone: +91-99999-99999</p>
-<p>Email: riverwinds.2026@gmaill.com</p>
+<p>Email: riverwinds.2026@gmail.com</p>
 <p>Delhi NCR, India</p>
-<form>
-<input class="form-control mb-2" placeholder="Name">
-<input class="form-control mb-2" placeholder="Email">
-<textarea class="form-control mb-2"></textarea>
+<input class="form-control my-2" placeholder="Name">
+<input class="form-control my-2" placeholder="Email">
+<textarea class="form-control my-2" placeholder="Message"></textarea>
 <button class="btn btn-gradient">Send</button>
-</form>
 </div>
 </div>
 </div>
 </section>
 
-<footer class="p-5">
+<!-- Footer -->
+<footer class="pt-5 pb-3">
 <div class="container">
 <div class="row">
-<div class="col-md-3"><h5>Riverwinds</h5><p>Your travel partner.</p></div>
-<div class="col-md-3"><h6>Quick Links</h6><a href="#">About</a><br><a href="#">Packages</a></div>
-<div class="col-md-3"><h6>Destinations</h6><a href="#">Goa</a><br><a href="#">Dubai</a></div>
-<div class="col-md-3"><h6>Contact</h6><p>Delhi NCR, India</p></div>
+<div class="col-md-3"><h5>Riverwinds</h5></div>
+<div class="col-md-3"><h6>Links</h6><a href="#">Home</a></div>
+<div class="col-md-3"><h6>Destinations</h6><p>Goa, Dubai</p></div>
+<div class="col-md-3"><h6>Contact</h6><p>Delhi NCR</p></div>
 </div>
 <hr>
 <p class="text-center">© 2026 Riverwinds</p>
 </div>
 </footer>
 
-<button id="topBtn" class="btn btn-gradient">↑</button>
+<button id="backToTop" class="btn btn-gradient">↑</button>
 <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
 
-<div class="position-fixed bottom-0 end-0 p-3">
-<div class="toast" id="toast"><div class="toast-body">Thanks! We'll contact you soon.</div></div>
+<!-- Toast -->
+<div class="toast position-fixed bottom-0 end-0 p-3">
+<div class="toast-body bg-success text-white">Thanks! We'll contact you soon.</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
+// typing text
 const words=["Goa","Kashmir","Dubai","Bali","Singapore"];
 let i=0;
-setInterval(()=>{document.getElementById("typing").innerText="Plan your trip to: "+words[i++%words.length];},2000);
+setInterval(()=>{
+document.getElementById("typing").innerText="Plan your trip to: "+words[i];
+i=(i+1)%words.length;
+},2000);
 
+// counter
 const counters=document.querySelectorAll('.counter');
-let started=false;
-window.addEventListener('scroll',()=>{
-if(!started){
+const run=()=>{
 counters.forEach(c=>{
-let update=()=>{
 let target=+c.dataset.count;
 let count=+c.innerText;
 let inc=target/100;
-if(count<target){c.innerText=Math.ceil(count+inc);setTimeout(update,20);}
-};
-update();
+if(count<target){c.innerText=Math.ceil(count+inc);setTimeout(run,30);}
 });
-started=true;
 }
-});
+window.addEventListener('scroll',run);
 
-document.getElementById("leadForm").addEventListener("submit",e=>{
+// toast
+document.getElementById('leadForm').addEventListener('submit',e=>{
 e.preventDefault();
-new bootstrap.Toast(document.getElementById('toast')).show();
+new bootstrap.Toast(document.querySelector('.toast')).show();
 });
 
-window.onscroll=()=>{topBtn.style.display=window.scrollY>200?'block':'none';}
-topBtn.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+// back to top
+window.onscroll=()=>{document.getElementById('backToTop').style.display=window.scrollY>300?'block':'none';}
+document.getElementById('backToTop').onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
 
 </body>
