@@ -45,6 +45,8 @@ footer a:hover{color:#fff;}
 </button>
 <div class="collapse navbar-collapse" id="nav">
 <ul class="navbar-nav ms-auto">
+<li class="nav-item"><a href="reviews.html" class="nav-link">Reviews</a></li>
+<li class="nav-item"><a href="why-us.html" class="nav-link">Why Choose Us</a></li>
 <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
 <li class="nav-item"><a href="#india" class="nav-link">India</a></li>
 <li class="nav-item"><a href="#international" class="nav-link">International</a></li>
@@ -148,8 +150,9 @@ document.write(indiaPackages.map(p=>`
 <h5>${p[0]}</h5>
 <p>5 Nights / 6 Days</p>
 <ul><li>Hotels</li><li>Sightseeing</li><li>Transfers</li></ul>
-<button class="btn btn-gradient w-100">View Details</button>
-</div>
+<a href="details-${p[0].toLowerCase()}.html" class="btn btn-gradient w-100">
+View Details
+</a></div>
 </div>
 </div>`).join(""));
 </script>
@@ -181,8 +184,9 @@ document.write(intl.map(p=>`
 <h5>${p[0]}</h5>
 <p>6 Nights / 7 Days</p>
 <ul><li>Flights</li><li>Hotels</li><li>Visa Help</li></ul>
-<button class="btn btn-gradient w-100">View Details</button>
-</div>
+<a href="details-${p[0].toLowerCase()}.html" class="btn btn-gradient w-100">
+View Details
+</a></div>
 </div>
 </div>`).join(""));
 </script>
